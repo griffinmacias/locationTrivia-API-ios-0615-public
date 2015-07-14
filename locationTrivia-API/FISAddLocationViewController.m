@@ -9,7 +9,7 @@
 #import "FISAddLocationViewController.h"
 #import "FISLocationsDataStore.h"
 #import "FISLocation.h"
-
+#import "FISLocationAPIClient.h"
 @interface FISAddLocationViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextField *nameInput;
@@ -29,8 +29,14 @@
     newLocation.name = self.nameInput.text;
     newLocation.latitude = @([self.latitudeInput.text floatValue]);
     newLocation.longitude = @([self.longitudeInput.text floatValue]);
-    [store.locations addObject:newLocation];
+     [store.locations addObject:newLocation];
+    [FISLocationAPIClient addLocationsFromAPI:newLocation completionBlock:^(BOOL success) {
+        
+    }];
+    
     [self dismissViewControllerAnimated:YES completion:nil];
+   
+    
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

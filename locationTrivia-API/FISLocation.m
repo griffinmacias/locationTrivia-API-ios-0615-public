@@ -10,7 +10,7 @@
 
 @implementation FISLocation
 
--(id)initWithName:(NSString *)name Latitude:(NSNumber *)latitude Longitude:(NSNumber *)longitude
+- (id) initWithName:(NSString *)name Latitude:(NSNumber *)latitude Longitude:(NSNumber *)longitude Id:(NSNumber *)locationID;
 {
     self = [super init];
     if (self) {
@@ -18,6 +18,7 @@
         _latitude=latitude;
         _longitude=longitude;
         _trivia = [[NSMutableArray alloc] init];
+        _locationID = locationID;
     }
 
     return self;
@@ -25,7 +26,7 @@
 
 - (instancetype)init
 {
-    return [self initWithName:@"" Latitude:@0 Longitude:@0];
+    return [self initWithName:@"" Latitude:@0 Longitude:@0 Id:@0];
 }
 
 - (NSString *)shortenedNameToLength:(NSInteger)length

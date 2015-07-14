@@ -5,7 +5,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 target "locationTrivia-API" do
 
-
+pod "AFNetworking", "~> 2.0"
 end
 
 target "locationTrivia-APITests" do
@@ -21,4 +21,5 @@ target "locationTrivia-APITests" do
   pod 'OCMock', '~> 2.2.4'
   pod 'OHHTTPStubs', '~> 3.1.2'
   pod 'KIF', '~> 3.0.4' 
+
 end
